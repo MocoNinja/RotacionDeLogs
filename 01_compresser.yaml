@@ -1,0 +1,8 @@
+- name: "Compress sql dump"
+  archive:
+    path: {{ db_dump_dir }}
+    remove: yes
+- name: "Compress web dump"
+  archive:
+    path: {{ web_dump_dir }}
+    remove: no

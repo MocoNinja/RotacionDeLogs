@@ -1,0 +1,5 @@
+- name:  Dump database {{ database }} to tmp dir {{ dump_dir }}
+  mysql_db:
+    state: dump
+    name: {{ database }}
+    target: {{ dump_dir }}.sql

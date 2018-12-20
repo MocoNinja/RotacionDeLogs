@@ -1,0 +1,8 @@
+- name: Fetch mysql dump
+  fetch:
+    src: {{db_dump_dir}}.tgz
+    dest: {{backup-dir}}
+- name: Fetch web dump
+  fetch:
+    src: {{db_dump_dir}}.tgz
+    dest: {{backup-dir}}
