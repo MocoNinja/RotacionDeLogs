@@ -33,6 +33,7 @@ def get_string_date(debug=False):
         print "Today is {}".format(str_format)
     return str_format
 
+"""
 def backup_content(debug=False):
     global CONTENT_DIR
     global DESTINATION_DIR
@@ -59,6 +60,7 @@ def backup_content(debug=False):
     except:
         print "ERROR performing backup. Exiting..."
         exit(1)
+"""
 
 def get_days_since(backup_date_str):
     backup_date = datetime.strptime(backup_date_str, "%Y-%m-%d")
@@ -98,6 +100,7 @@ def delete_old_backups(debug=False,delete=True):
             if delete:
                 os.remove(file_2_delete)
 
+"""
 def dump_mysql(debug=False):
     global DATABASE
     global DESTINATION_DIR
@@ -113,6 +116,7 @@ def dump_mysql(debug=False):
     except:
         print "ERROR performing dump. Exiting..."
         exit(1)
+"""
 
 def main():
     if len(argv) == 1:
