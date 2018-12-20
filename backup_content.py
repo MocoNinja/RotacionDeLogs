@@ -144,8 +144,9 @@ def date_ansible_backups():
 def main():
     if len(argv) == 1:
         print "No args provided. Launching all..."
-        backup_content()
-        dump_mysql()
+        # backup_content()
+        # dump_mysql()
+        date_ansible_backups()
         delete_old_backups()
     else:
         if "--help" in argv:
