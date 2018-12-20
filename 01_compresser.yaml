@@ -1,8 +1,14 @@
 - name: "Compress sql dump"
   archive:
-    path: {{ db_dump_dir }}
+    path: "{{ db_dump_dir }}/{{ inventory_hostname }}.sql"
+    # "backup_mysql_DATE.sql.gz" -> "backup_mysql_DATE_DATABASE_hostname.sql.gz"
+    # Formato date: 2018-12-20_13-35-59
+    dest: "{{ db_dump_dir }}/{{ inventory_hostname }}.sql.gz"
     remove: yes
+
 - name: "Compress web dump"
   archive:
-    path: {{ web_dump_dir }}
+    path: "{{ web_dump_dir }}"
+    # "backup_html_DATE.tar.gz" -> "backup_html_DATE_WEB_hostname.sql.gz"
+    dest: "{{ web_dump_dir }}/{{ inventory_hostname }}.tar.gz"
     remove: no

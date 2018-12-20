@@ -1,0 +1,6 @@
+- hosts: all
+  vars:
+    database: ${database_name}
+    db_dump_dir: $(datebase_dump_path)
+    web_dump_dir: $(web_dump_path)
+    backup-dir: $(backup_gather_path)

@@ -1,5 +1,6 @@
-- name:  Dump database {{ database }} to tmp dir {{ dump_dir }}
+- name:  Dump database {{ database }} to tmp dir {{ sql_dump_dir }}
   mysql_db:
     state: dump
     name: {{ database }}
-    target: {{ dump_dir }}.sql
+    # Guarda el dumpeo en la carpeta/nombre_host.sql
+    target: "{{ db_dump_dir }}/{{ inventory_hostname }}.sql"

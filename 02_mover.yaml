@@ -1,8 +1,8 @@
 - name: Fetch mysql dump
   fetch:
-    src: {{db_dump_dir}}.tgz
-    dest: {{backup-dir}}
+    src: "{{ db_dump_dir }}/{{ inventory_hostname }}.sql.gz"
+    dest: "{{backup-dir}}/DATABASE_{{ inventory_hostame}}.sql.gz"
 - name: Fetch web dump
   fetch:
-    src: {{db_dump_dir}}.tgz
-    dest: {{backup-dir}}
+    src: "{{web_dump_dir}}.tgz"
+    dest: "{{ web_dump_dir }}/WEB_{{ inventory_hostname }}.tar.gz"
