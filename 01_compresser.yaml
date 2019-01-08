@@ -9,6 +9,6 @@
 - name: "Compress web dump"
   archive:
     path: "{{ web_dump_dir }}"
-    # "backup_html_DATE.tar.gz" -> "backup_html_DATE_WEB_hostname.sql.gz"
+    # "backup_html_DATE.tar.gz" -> "backup_html_DATE_WEB_hostname.gz"
     dest: "{{ web_dump_dir }}/{{ inventory_hostname }}.tar.gz"
     remove: no

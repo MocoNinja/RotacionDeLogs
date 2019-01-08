@@ -118,7 +118,7 @@ def dump_mysql(debug=False):
         exit(1)
 """
 
-def date_ansible_backups():
+def date_ansible_backups(debug=False):
     """
         Ahora, espera nombres del estilo
         TIPO{{ inventory_hostname }}.tar.gz"
@@ -128,7 +128,7 @@ def date_ansible_backups():
     TYPES = ["DATABASE", "WEB"]
     REPLACEMENTS = ["DATABASE":"mysql", "WEB":"html"]
     for backup in os.listdir(DESTINATION_DIR):
-        for in TYPES:
+        for type in TYPES:
             try:
                 backup.index(type)
                 new_name = backup.replace(type, "backup_{}_{}".format(
@@ -141,13 +141,16 @@ def date_ansible_backups():
                     print "Not an Ansible backup. Skipping"
                 continue
 
+"""
+    TODO: Revisar el flujo de ejecución nuevo
+"""
 def main():
     if len(argv) == 1:
         print "No args provided. Launching all..."
         # backup_content()
         # dump_mysql()
         date_ansible_backups()
-        delete_old_backups()
+        # delete_old_backups()
     else:
         if "--help" in argv:
             help()
