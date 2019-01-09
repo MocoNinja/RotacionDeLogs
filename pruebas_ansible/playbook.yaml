@@ -1,0 +1,10 @@
+- hosts: machines
+  remote_user: centos
+  become: yes
+  tasks:
+    - name: respaldar
+      import_tasks: "simple_dump/dumper_bash.yaml"
+    - name: empacar
+      import_tasks: "compresser/compresser.yaml"
+    - name: traer
+      import_tasks: "bringer/bringer.yaml"

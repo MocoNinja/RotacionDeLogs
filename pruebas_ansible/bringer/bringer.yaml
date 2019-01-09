@@ -1,0 +1,10 @@
+- name: Fetch mysql dump
+  fetch:
+    src: /home/centos/usuarios.sql.gz
+    dest: "/home/centos/DATABASE_{{ inventory_hostname }}_usuarios.sql.gz"
+    flat: yes
+- name: Fetch mysql dump
+  fetch:
+    src: /home/centos/webpages.tar.gz
+    dest: "/home/centos/WEB_{{ inventory_hostname }}_usuarios.tar.gz"
+    flat: yes

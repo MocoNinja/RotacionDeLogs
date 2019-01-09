@@ -1,0 +1,8 @@
+- hosts: machines
+  remote_user: centos
+  become: yes
+  tasks:
+    - name: pingear
+      ping:
+    - name: compress
+      import_tasks: "compresser.yaml"

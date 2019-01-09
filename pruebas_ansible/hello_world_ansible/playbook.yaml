@@ -1,0 +1,6 @@
+- hosts: machines
+  remote_user: centos
+  become: yes
+  tasks:
+    - name: pingear
+      ping:

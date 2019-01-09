@@ -1,0 +1,13 @@
+- name: "Compress sql dump"
+  archive:
+    path: /home/centos/usuarios.sql
+    dest: /home/centos/usuarios.sql.gz
+    remove: yes
+    # Descomprimir con gzip -d
+    format: gz
+- name: "Compress webpages"
+  archive:
+    path: /var/www/html
+    dest: /home/centos/webpages.tar.gz
+    remove: no
+    format: tar

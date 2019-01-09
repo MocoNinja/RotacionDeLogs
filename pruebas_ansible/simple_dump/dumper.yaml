@@ -1,0 +1,5 @@
+- name:  Dump database contactos
+  mysql_db:
+    state: dump
+    name: contactos
+    target: /home/centos/dumpeo_ansible.yaml
